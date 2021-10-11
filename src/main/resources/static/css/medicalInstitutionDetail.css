@@ -1,0 +1,35 @@
+.form-detail {
+    display: flex;
+}
+label {
+    width: 40%;
+    border: 1px solid;
+    padding: 6px;
+}
+.td-label {
+    background-color: #EEEEEE;
+}
+input[type="text"].form-detail {
+    border: 0px;
+    width: 100%;
+    padding-left: 25px;
+    /*height: calc(1.5em + .75rem + 10px);*/
+}
+input[type=text].form-detail:focus {
+    outline: none;
+}
+textarea.form-detail {
+    border: 0px;
+    width: 100%;
+    padding-left: 25px;
+    /*height: calc(1.5em + .75rem + 10px);*/
+}
+textarea.form-detail:focus {
+    outline: none;
+}
+.div-title {
+    text-align: center;
+}
+.div-title h4 {
+    font-weight: bold;
+}

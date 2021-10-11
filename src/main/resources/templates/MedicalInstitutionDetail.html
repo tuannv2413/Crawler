@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CrawlTool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--    Bootstrap & Jquery-->
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/bootstrap.min.css">
+    <script src="/assets/jquery/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--    css-->
+    <link href="/css/index.css" rel="stylesheet" type="text/css">
+    <link href="/css/medicalInstitutionDetail.css" rel="stylesheet" type="text/css">
+
+    <!--    js-->
+    <script type="text/javascript" src="/js/medicalInstitutionDetail.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <header class="fixed-top container-fluid">
+        <nav class="navbar navbar-expand-lg fixed-top container-fluid" id="nav">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="/">CRAWLER</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvbCollapse"
+                        aria-controls="nvbCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nvbCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <!--                        <li class="nav-item pl-1" id="menu-1">-->
+                        <!--                            <a class="nav-link" href="/prefecture"><i-->
+                        <!--                                    class="fa fa-home fa-fw mr-1"></i>Prefecture</a>-->
+                        <!--                        </li>-->
+                        <li class="nav-item active pl-1" id="menu-2">
+                            <a class="nav-link" href="/medicalInstitution"><i
+                                    class="fa fa-home fa-fw mr-1"></i>医療機関一覧</a>
+                        </li>
+                        <li class="nav-item pl-1" id="menu-3">
+                            <a class="nav-link" href="/urls"><i class="fa fa-th-list fa-fw mr-1"></i>URLS一覧</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mt-3" id="medical-institution-content">
+        <div class="row" style="margin-top: 80px">
+            <div class="col-lg-12 col-sm-12">
+                <div class="container">
+                    <div class="div-title">
+                        <h4>医療機関詳細情報</h4>
+                    </div>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td class="td-label" style="width: 33%;">医療機関番号</td>
+                            <td>
+                                <input type="text" class="form-detail" id="code" name="code">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-label">医療機関名称</td>
+                            <td>
+                                <input type="text" class="form-detail" id="name" name="name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-label">郵便番号</td>
+                            <td>
+                                <input type="text" class="form-detail" id="post" name="post">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-label">住所</td>
+                            <td>
+                                <input type="text" class="form-detail" id="address" name="address">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-label">電話番号</td>
+                            <td>
+                                <input type="text" class="form-detail" id="phone" name="address">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-label">区分</td>
+                            <td>
+                                <input type="text" class="form-detail" id="categoryName" name="categoryName">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-label">都道府県</td>
+                            <td>
+                                <input type="text" class="form-detail" id="prefectureName" name="prefectureName">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-label">開設者氏名</td>
+                            <td>
+                                <input type="text" class="form-detail" id="founder" name="founder">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-label">管理者氏名</td>
+                            <td>
+                                <input type="text" class="form-detail" id="manager" name="manager">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-label">勤務医数</td>
+                            <td>
+                                <textarea class="form-detail" rows="7" id="doctorInfo"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-label">病床数 ／ 診療科名</td>
+                            <td>
+                                <textarea class="form-detail" rows="7" id="bedsDepartments"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-label">指定年月日<br/>
+                                登録理由<br/>
+                                指定期間始</td>
+                            <td>
+                                <textarea class="form-detail" rows="3" id="time"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-label">備考</td>
+                            <td>
+                                <textarea class="form-detail" rows="7" id="note"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/assets/dist/sweetalert2.all.min.js"></script>
+</body>
+</html>

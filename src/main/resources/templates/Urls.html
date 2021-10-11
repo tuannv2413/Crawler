@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CrawlTool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--    Bootstrap & Jquery-->
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/bootstrap.min.css">
+    <script src="/assets/jquery/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--    css-->
+    <link href="/css/index.css" rel="stylesheet" type="text/css">
+
+    <!--    js-->
+    <script type="text/javascript" src="/js/tableURL.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top container-fluid" id="nav">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="/">CRAWLER</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvbCollapse"
+                        aria-controls="nvbCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nvbCollapse">
+                    <ul class="navbar-nav ml-auto">
+<!--                        <li class="nav-item pl-1" id="menu-1">-->
+<!--                            <a class="nav-link" href="/prefecture"><i class="fa fa-home fa-fw mr-1"></i>Prefecture</a>-->
+<!--                        </li>-->
+                        <li class="nav-item pl-1" id="menu-2">
+                            <a class="nav-link" href="/medicalInstitution"><i class="fa fa-home fa-fw mr-1"></i>医療機関一覧</a>
+                        </li>
+                        <li class="nav-item active pl-1" id="menu-3">
+                            <a class="nav-link" href="/urls"><i class="fa fa-th-list fa-fw mr-1"></i>URLS一覧</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="mt-3" id="urls-content">
+        <div class="row" style="margin-top: 80px">
+            <div class="col-lg-6 col-sm-6">
+                <div class="input-group mb-3">
+                    <div style="float: left">
+                        <button class="btn btn-success" type="submit" id="btn-insert" onclick="handleShowModal()"
+                                style="float: right">URL追加
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="input-group mb-3" style="float: right; width: 50%">
+                    <input type="text" id="url-name" class="form-control" placeholder="URLで検索">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="submit" onclick="handleSearchUrl()">検索</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped" style="border-bottom: 1px solid #F2F2F2;">
+            <thead id="table_thead">
+            <tr style="vertical-align: middle !important">
+                <th style="vertical-align: middle">順</th>
+                <th style="text-align: center;width: 14%;vertical-align: middle">地方厚生局</th>
+                <th style="text-align: center;width: 10%;vertical-align: middle">区分</th>
+                <th style="text-align: center;vertical-align: middle">URL</th>
+                <th style="text-align: center;vertical-align: middle">ステータス</th>
+                <th style="text-align: center;vertical-align: middle"></th>
+                <th style="text-align: center;vertical-align: middle"></th>
+            </tr>
+            </thead>
+            <tbody id="table_tbody"></tbody>
+        </table>
+
+        <div class="d-flex justify-content-center mb-3" id="div-spin">
+            <div class="spinner-border text-success" role="status" id="spin">
+                <span class="sr-only">処理中</span>
+            </div>
+        </div>
+
+        <div id="div_nodata"
+             style="color: gray; border-bottom: 1px solid #d8d8d8; padding: 130px; text-align: center; display: none">
+            <h6>検索条件に一致するデータが見つかりません。</h6>
+        </div>
+
+        <div class="center" id="div-pag">
+            <ul class="pagination" id="pagination"></ul>
+        </div>
+
+        <!--    Modal Update   -->
+        <div class="modal fade" id="formModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">URL更新</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="url" class="col-form-label">URL:</label>
+                                <input type="text" class="form-control" id="url"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="handleClickUpdate()">更新</button>
+                        <button id="btn-upload1" type="button" class="btn btn-secondary" onclick="handleUpload1()"
+                                disabled>アップロード
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--    Modal Insert   -->
+        <div class="modal fade" id="formModalInsert" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="labelTitleInsert">URL追加</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="url" class="col-form-label">URL:</label>
+                                <input type="text" class="form-control" id="url-text"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="handleInsertUrl()">保存</button>
+                        <button id="btn-upload" type="button" class="btn btn-secondary" onclick="handleUpload()"
+                                disabled>アップロード
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        $('#formModalInsert').on('hidden.bs.modal', function(){
+            $('#url-text').val('');
+            $("#btn-upload1").prop('disabled', true);
+        });
+        $('#formModal').on('hidden.bs.modal', function(){
+            $('#url').val('');
+            $("#btn-upload1").prop('disabled', true);
+        });
+    });
+</script>
+<script src="/assets/dist/sweetalert2.all.min.js"></script>
+</body>
+</html>

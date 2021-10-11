@@ -1,0 +1,26 @@
+2021-09-09 09:06:46.968  INFO 748 --- [main] c.e.crawltool.CrawlToolApplication       : Starting CrawlToolApplication using Java 1.8.0_181 on DESKTOP-750FOMS with PID 748 (D:\Crawler\crawler\CrawlTool\target\classes started by ARIUS-DEV 03 in D:\Crawler\crawler\CrawlTool)
+2021-09-09 09:06:46.978  INFO 748 --- [main] c.e.crawltool.CrawlToolApplication       : No active profile set, falling back to default profiles: default
+2021-09-09 09:06:48.051  INFO 748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-09 09:06:48.215  INFO 748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 145 ms. Found 6 JPA repository interfaces.
+2021-09-09 09:06:48.976  INFO 748 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8443 (https) 8080 (http)
+2021-09-09 09:06:48.993  INFO 748 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-09-09 09:06:48.993  INFO 748 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-09-09 09:06:49.283  INFO 748 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-09-09 09:06:49.283  INFO 748 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2207 ms
+2021-09-09 09:06:49.528  INFO 748 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-09 09:06:49.610  INFO 748 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-09 09:06:49.849  INFO 748 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-09 09:06:50.116  INFO 748 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-09-09 09:06:50.717  INFO 748 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-09-09 09:06:50.748  INFO 748 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-09-09 09:06:51.852  INFO 748 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-09 09:06:51.881  INFO 748 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-09 09:06:53.287  WARN 748 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-09 09:06:54.483  INFO 748 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8443 (https) 8080 (http) with context path ''
+2021-09-09 09:06:54.495  INFO 748 --- [main] c.e.crawltool.CrawlToolApplication       : Started CrawlToolApplication in 8.152 seconds (JVM running for 11.114)
+2021-09-09 09:07:32.416  INFO 748 --- [https-jsse-nio-8443-exec-8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-09 09:07:32.416  INFO 748 --- [https-jsse-nio-8443-exec-8] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-09-09 09:07:32.418  INFO 748 --- [https-jsse-nio-8443-exec-8] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-09-09 09:11:36.106  INFO 748 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-09 09:11:36.109  INFO 748 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-09-09 09:11:36.119  INFO 748 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

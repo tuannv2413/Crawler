@@ -1,0 +1,55 @@
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 1px solid #e5e3e3;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: black;
+  background-color: white;
+  background-image: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 2.5em;
+  border-radius: .25em;
+  overflow: hidden;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: -6px;
+  right: 0;
+  padding: 1em;
+  background-color: #28a745;
+  transition: .25s all ease;
+  pointer-events: none;
+  color: #ffffff;
+}
+/* Transition */
+.select:hover::after {
+  color: #ffffff;
+  background-color: #22913a;
+}
+
+#btn-MI-search {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+#btn-MI-search:hover{
+  background-color: #22913a;
+  border-color: #22913a;
+}
