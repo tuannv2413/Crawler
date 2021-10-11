@@ -22,14 +22,10 @@ jobs:
         
     - name: Build with Maven
       run: mvn clean install
-    
-  upload:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: shallwefootball/s3-upload-action@master
-        with:
-          aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_bucket: ${{ secrets.AWS_S3_BUCKET_NAME }}
-          source_dir: 'target/spring-boot-crawler.jar'
+    - name: Upload filr to S3
+      uses: shallwefootball/s3-upload-action@master
+      with:
+        aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws_bucket: ${{ secrets.AWS_S3_BUCKET_NAME }}
+        source_dir: 'target/spring-boot-crawler.jar'
